@@ -1,0 +1,43 @@
+services:
+  backEnd:
+    build: ./Job_timer
+    container_name: backEnd
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - network
+
+  frontEnd:
+    build: ./Job_Time_Front
+    container_name: frontEnd
+    ports:
+      - "8000:80"
+    networks:
+      - network
+
+  db:
+    image: postgres:18
+    env_file:
+      - Job_Timer/.env
+    container_name: postgres_data
+    environment:
+      POSTGRES_USER: db_user
+      POSTGRES_PASSWORD: 7792
+      POSTGRES_DB: postgres
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - network
+
+volumes:
+  postgres_data:
+
+networks:
+  network:
+    driver: bridge

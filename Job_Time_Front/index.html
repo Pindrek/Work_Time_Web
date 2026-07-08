@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work Time</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="dist/progress.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="text">
+        <p class="min">Мінімум за день</p>
+        <p class="average">В середньому за день</p>
+        <p class="max">Максимум за день</p>
+    </div>
+    <div class="form">
+        <p class="min_value" id="min_value">1</p>
+        <p class="average_value" id="average_value">2</p>
+        <p class="max_value" id="max_value">3</p>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th class="Progress_bar">PROGRESS BAR</th>
+            <th class="Progress">PROGRESS</th>
+            <th class="Date">DATE</th>
+        </tr>
+        </thead>
+        <tbody id="table"></tbody>
+    </table>
+
+    <button class="start" id="start">Start</button>
+    <button class="stop" id="stop">Stop</button>
+
+    <a class="version" href="history.txt" download>Version: 0.1</a>
+</div>
+
+</body>
+</html>
