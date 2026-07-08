@@ -7,6 +7,6 @@ Stack:
 - Dockerfile
 - docker-compose.yaml
 
-Rub:
+Run:
 
 - docker-compose up --build
