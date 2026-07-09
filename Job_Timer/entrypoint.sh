@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 echo "Makemigrations"
 python manage.py makemigrations
 
