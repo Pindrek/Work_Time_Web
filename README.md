@@ -6,7 +6,8 @@ Stack:
 - PostgreSQL
 - Dockerfile
 - docker-compose.yaml
+- entrypoint.sh
 
 Run:
 
-- docker-compose up --build
+- docker-compose up --build 
