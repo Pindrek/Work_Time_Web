@@ -1,7 +1,7 @@
 services:
-  backEnd:
+  backend:
     build: ./Job_timer
-    container_name: backEnd
+    container_name: back_end
     ports:
       - "8000:8000"
     depends_on:
@@ -9,18 +9,18 @@ services:
     networks:
       - network
 
-  frontEnd:
+  frontend:
     build: ./Job_Time_Front
-    container_name: frontEnd
+    container_name: front_end
     ports:
-      - "8000:80"
+      - "3000:80"
     networks:
       - network
 
   db:
-    image: postgres:18
+    image: postgres:17
     env_file:
-      - Job_Timer/.env
+      - ./Job_Timer/.env
     container_name: postgres_data
     environment:
       POSTGRES_USER: db_user
